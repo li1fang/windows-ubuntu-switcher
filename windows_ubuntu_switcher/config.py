@@ -36,5 +36,6 @@ API_VERSION = "1.0.0"
 API_DESCRIPTION = "Windows/Ubuntu切换器API"
 
 # 其他设置
+LOG_DIR = "S:\\logs"  # 日志目录
 LOG_FILE = "windows_ubuntu_switcher.log"
 DEBUG_MODE = False  # 调试模式开关

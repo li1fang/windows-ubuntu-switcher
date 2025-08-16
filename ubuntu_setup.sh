@@ -12,6 +12,13 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# 获取日志目录
+LOG_DIR=$(python3 - <<'PY'
+from windows_ubuntu_switcher.config import LOG_DIR
+print(LOG_DIR)
+PY
+)
+
 # 创建挂载点目录
 echo "创建挂载点目录..."
 mkdir -p /mnt/windows
@@ -140,7 +147,7 @@ echo "sudo /usr/local/bin/ubuntu-windows-switcher.sh"
 echo
 echo "要查看日志，请使用:"
 echo "cat /var/log/ubuntu-windows-switcher.log"
-echo
+echo 
 
 # 询问是否立即测试
 echo "是否立即测试脚本？(y/n)"
@@ -151,3 +158,4 @@ if [ "$TEST_NOW" = "y" ] || [ "$TEST_NOW" = "Y" ]; then
 fi
 
 echo "设置完成！"
+echo "日志已保存至 ${LOG_DIR}，请在反馈问题时附上日志文件"

@@ -12,13 +12,14 @@ import argparse
 import logging
 from gui import MainWindow
 from system_utils import create_flag_file, reboot_system, check_system_status
-from config import SYSTEM_NAME
+from config import SYSTEM_NAME, LOG_DIR, LOG_FILE
 
 # 配置日志
+os.makedirs(LOG_DIR, exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='windows_ubuntu_switcher.log',
+    filename=os.path.join(LOG_DIR, LOG_FILE),
     filemode='a'
 )
 logger = logging.getLogger('main')
