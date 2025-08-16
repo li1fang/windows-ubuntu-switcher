@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.exe
+*.msi
+*.bat
+*.cmd
+*.vbs
+*.reg
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# User specific files
+C:/Users/Administrator/
+NTUSER.DAT*
+ntuser.*
+
+# Project specific
+ubuntu_files.zip
+*.zip

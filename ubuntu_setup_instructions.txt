@@ -1,0 +1,34 @@
+亲爱的Ubuntu系统AI助手：
+
+请协助完成以下配置以使Windows/Ubuntu切换器正常工作：
+
+1. 共享分区设置：
+- 请确认Windows磁盘管理中已创建卷标为"SHARED"的NTFS分区
+- 在Ubuntu中创建挂载点：
+  sudo mkdir -p /mnt/windows
+
+2. 配置自动挂载：
+- 查找共享分区UUID：
+  sudo blkid | grep SHARED
+- 编辑/etc/fstab文件：
+  sudo nano /etc/fstab
+- 添加以下内容（替换实际UUID）：
+  UUID=你的分区UUID /mnt/windows ntfs defaults,auto,rw,users 0 0
+- 应用挂载：
+  sudo mount -a
+
+3. 安装切换脚本：
+- 复制脚本到系统目录：
+  sudo cp ubuntu-windows-switcher.sh /usr/local/bin/
+  sudo chmod +x /usr/local/bin/ubuntu-windows-switcher.sh
+- 安装服务：
+  sudo cp ubuntu-windows-switcher.service /etc/systemd/system/
+  sudo systemctl daemon-reload
+  sudo systemctl enable ubuntu-windows-switcher.service
+
+4. GRUB配置检查：
+- 确认Windows启动项名称：
+  grep -i "menuentry " /boot/grub/grub.cfg | grep -i windows
+- 如有需要，修改脚本中的WINDOWS_GRUB_ENTRY变量
+
+完成配置后请回复确认，谢谢！
