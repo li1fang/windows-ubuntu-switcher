@@ -48,8 +48,8 @@ def show_banner():
     print("=" * 60)
 
 def show_menu():
-    """Show main menu"""
-    print("\n📋 Available Options:")
+    """Show the main menu"""
+    print("📋 Available Options:")
     print("1. 🚀 Quick Start - Set up development environment")
     print("2. 🔧 Initialize Git Repository")
     print("3. 📝 Update README with project info")
@@ -59,6 +59,7 @@ def show_menu():
     print("7. 📚 View Documentation")
     print("8. 🔍 Check Project Status")
     print("9. 🆘 Help & Support")
+    print("10. ⚙️  Configure GitHub Authentication")
     print("0. 🚪 Exit")
     print("-" * 60)
 
@@ -274,6 +275,82 @@ def show_help():
     print("   - Create an issue on GitHub")
     print("   - Review the code comments")
 
+def configure_github_auth():
+    """Configure GitHub authentication settings"""
+    print("\n⚙️  GitHub Authentication Configuration")
+    print("=" * 50)
+    
+    print("🔐 请配置 GitHub 认证信息")
+    print("注意：Token 是敏感信息，请妥善保管！")
+    print()
+    
+    # 获取用户输入
+    username = input("请输入你的 GitHub 用户名: ").strip()
+    if not username:
+        print("❌ 用户名不能为空")
+        return
+    
+    email = input("请输入你的邮箱地址: ").strip()
+    if not email:
+        print("❌ 邮箱不能为空")
+        return
+    
+    token = input("请输入你的 Personal Access Token: ").strip()
+    if not token:
+        print("❌ Token 不能为空")
+        return
+    
+    token_expiry = input("请输入 Token 过期时间 (例如: 90 days, 1 year): ").strip()
+    if not token_expiry:
+        token_expiry = "90 days"
+    
+    # 配置 Git
+    print("\n🔧 正在配置 Git...")
+    
+    success1, stdout1, stderr1 = run_command(f'git config --global user.name "{username}"')
+    success2, stdout2, stderr2 = run_command(f'git config --global user.email "{email}"')
+    
+    if success1 and success2:
+        print("✅ Git 用户信息配置成功")
+    else:
+        print("❌ Git 配置失败")
+        if stderr1:
+            print(f"用户名配置错误: {stderr1}")
+        if stderr2:
+            print(f"邮箱配置错误: {stderr2}")
+        return
+    
+    # 保存配置信息到文件
+    config_data = f"""# GitHub Authentication Configuration
+# 生成时间: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+GITHUB_USERNAME={username}
+GITHUB_EMAIL={email}
+TOKEN_EXPIRY={token_expiry}
+
+# 重要提醒：
+# 1. Token 已配置到 Git 中，无需重复输入
+# 2. Token 过期时间: {token_expiry}
+# 3. 请妥善保管 Token，不要分享给他人
+# 4. 如需更新 Token，请重新运行此配置
+"""
+    
+    try:
+        with open("github_config.txt", "w", encoding="utf-8") as f:
+            f.write(config_data)
+        print("✅ 配置信息已保存到 github_config.txt")
+    except Exception as e:
+        print(f"⚠️  配置保存失败: {e}")
+    
+    print("\n🎉 GitHub 认证配置完成！")
+    print("\n📋 配置摘要:")
+    print(f"   用户名: {username}")
+    print(f"   邮箱: {email}")
+    print(f"   Token 过期时间: {token_expiry}")
+    print("\n💡 提示:")
+    print("   - 现在可以继续选项3: Update README")
+    print("   - 使用真实用户名更新项目信息")
+    print("   - Token 已自动配置到 Git 中")
+
 def main():
     """Main function"""
     while True:
@@ -305,8 +382,10 @@ def main():
                 check_project_status()
             elif choice == "9":
                 show_help()
+            elif choice == "10":
+                configure_github_auth()
             else:
-                print("\n❌ Invalid choice. Please enter a number between 0-9.")
+                print("\n❌ Invalid choice. Please enter a number between 0-10.")
             
             if choice != "0":
                 input("\n⏸️  Press Enter to continue...")

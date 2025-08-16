@@ -9,6 +9,28 @@ A Cloud Operating System designed for managing cloud-native applications
 
 <div align="center">
 
+[![Python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-beta-orange.svg)](https://github.com/3/windows-ubuntu-switcher)
+[![Platform](https://img.shields.io/badge/platform-windows%20%7C%20ubuntu-lightgrey.svg)](https://github.com/3/windows-ubuntu-switcher)
+
+[![GitHub issues](https://img.shields.io/github/issues/3/windows-ubuntu-switcher)](https://github.com/3/windows-ubuntu-switcher/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/3/windows-ubuntu-switcher)](https://github.com/3/windows-ubuntu-switcher/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/3/windows-ubuntu-switcher)](https://github.com/3/windows-ubuntu-switcher/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/3/windows-ubuntu-switcher)](https://github.com/3/windows-ubuntu-switcher/commits/main)
+
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/3/windows-ubuntu-switcher/ci.yml)](https://github.com/3/windows-ubuntu-switcher/actions)
+
+[![GitHub stars](https://img.shields.io/github/stars/3/windows-ubuntu-switcher)](https://github.com/3/windows-ubuntu-switcher/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/3/windows-ubuntu-switcher)](https://github.com/3/windows-ubuntu-switcher/network)
+[![GitHub watchers](https://img.shields.io/github/watchers/3/windows-ubuntu-switcher)](https://github.com/3/windows-ubuntu-switcher/watchers)
+
+</div>
+
+
+
+<div align="center">
+
 [![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Container&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/github/labring/sealos)
 [![Build Status](https://github.com/labring/sealos/actions/workflows/release.yml/badge.svg)](https://github.com/labring/sealos/actions)
 [![](https://img.shields.io/docker/pulls/labring/kubernetes)](https://hub.docker.com/r/labring/kubernetes)
@@ -77,7 +99,7 @@ Sealos is a cloud operating system distribution based on the Kubernetes kernel. 
 
 ## 🚧 Roadmap
 
-Sealos maintains a [public roadmap](https://github.com/orgs/labring/projects/4/views/9). It gives a a high-level view of the main priorities for the project, the maturity of different features and projects, and how to influence the project direction.
+Sealos maintains a [public roadmap](https://github.com/3/windows-ubuntu-switcher/projects). It gives a a high-level view of the main priorities for the project, the maturity of different features and projects, and how to influence the project direction.
 
 ## 👩‍💻 Contributing & Development
 

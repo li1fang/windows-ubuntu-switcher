@@ -1,0 +1,11 @@
+# GitHub Authentication Configuration
+# 生成时间: 2025-08-17 03:36:23
+GITHUB_USERNAME=li1fang
+GITHUB_EMAIL=garros0001@gmail.com
+TOKEN_EXPIRY=1 year
+
+# 重要提醒：
+# 1. Token 已配置到 Git 中，无需重复输入
+# 2. Token 过期时间: 1 year
+# 3. 请妥善保管 Token，不要分享给他人
+# 4. 如需更新 Token，请重新运行此配置
