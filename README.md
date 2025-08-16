@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h2 align="center">
 
 ![](/docs/4.0/img/sealos-left-dark.png#gh-dark-mode-only)
@@ -224,3 +225,7 @@ test-switcher.sh                - 测试脚本
 ### 自定义开发
 
 可以通过修改`config.py`文件来自定义应用程序的行为和外观。
+=======
+# windows-ubuntu-switcher
+Windows/Ubuntu 自动切换器
+>>>>>>> 309910cb88dd57016e178e8a6720147a9427c4da
