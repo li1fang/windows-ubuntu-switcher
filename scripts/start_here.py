@@ -90,11 +90,23 @@ def run_quick_start():
 def run_git_init():
     """Run git initialization script"""
     print("\n🔧 Initializing Git Repository...")
+    print("🔍 Debug: Function run_git_init() was called!")
+    
     script_path = "scripts/init_git.py"
+    
+    print(f"🔍 Debug: Looking for script at: {os.path.abspath(script_path)}")
+    print(f"🔍 Debug: Current working directory: {os.getcwd()}")
     
     if os.path.exists(script_path):
         print(f"✅ Script found, executing...")
+        print(f"🔍 Debug: About to run: python {script_path}")
+        
         success, stdout, stderr = run_command(f"python {script_path}")
+        
+        print(f"🔍 Debug: Command completed, success={success}")
+        print(f"🔍 Debug: stdout length: {len(stdout) if stdout else 0}")
+        print(f"🔍 Debug: stderr length: {len(stderr) if stderr else 0}")
+        
         if not success:
             print(f"❌ Git initialization failed!")
             if stderr:
