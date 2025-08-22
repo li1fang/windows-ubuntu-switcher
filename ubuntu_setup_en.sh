@@ -12,6 +12,13 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+# Get log directory
+LOG_DIR=$(python3 - <<'PY'
+from windows_ubuntu_switcher.config import LOG_DIR
+print(LOG_DIR)
+PY
+)
+
 # Create mount point directory
 echo "Creating mount point directory..."
 mkdir -p /mnt/windows
@@ -151,3 +158,4 @@ if [ "$TEST_NOW" = "y" ] || [ "$TEST_NOW" = "Y" ]; then
 fi
 
 echo "Setup complete!"
+echo "Logs have been saved to ${LOG_DIR}. Please attach the log file when reporting issues."

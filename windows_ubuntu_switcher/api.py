@@ -11,13 +11,15 @@ import sys
 import json
 import argparse
 import logging
+from config import LOG_DIR, LOG_FILE
 from system_utils import create_flag_file, reboot_system, check_system_status
 
 # 配置日志
+os.makedirs(LOG_DIR, exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='windows_ubuntu_switcher.log',
+    filename=os.path.join(LOG_DIR, LOG_FILE),
     filemode='a'
 )
 logger = logging.getLogger('api')

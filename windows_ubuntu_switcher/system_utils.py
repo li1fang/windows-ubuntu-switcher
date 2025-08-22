@@ -11,13 +11,14 @@ import subprocess
 import logging
 import time
 from tkinter import messagebox
-from config import FLAG_FILE_PATH, ERROR_CREATE_FLAG, ERROR_REBOOT, REBOOT_TIMEOUT
+from config import FLAG_FILE_PATH, ERROR_CREATE_FLAG, ERROR_REBOOT, REBOOT_TIMEOUT, LOG_DIR, LOG_FILE
 
 # 配置日志
+os.makedirs(LOG_DIR, exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='windows_ubuntu_switcher.log',
+    filename=os.path.join(LOG_DIR, LOG_FILE),
     filemode='a'
 )
 logger = logging.getLogger('system_utils')
